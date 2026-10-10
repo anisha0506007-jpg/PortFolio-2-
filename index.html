@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anisha Parmar's portfolio showcasing web development projects, technical skills, and resume.">
+  <meta name="theme-color" content="#090b12">
+  <title>Anisha Parmar | Full-Stack Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#home" class="logo">AP<span>.</span></a>
+
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle"
+        type="button" aria-label="Switch to light mode">
+        <span id="themeIcon">☀</span>
+        <span id="themeLabel">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="container hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">BCA Student · Developer in Progress</p>
+
+        <h1>Hi, I'm<br>
+          <span class="gradient">Anisha Parmar.</span>
+        </h1>
+
+        <h2>Aspiring Full-Stack Developer</h2>
+
+        <p class="hero-description">
+          I build practical web applications using modern web technologies.
+          I enjoy solving problems, debugging applications, learning new
+          tools, and turning ideas into useful digital experiences.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
+
+          <button type="button" class="btn btn-outline"
+            id="reviewResume">Review Resume ↗</button>
+
+          <button type="button" class="btn btn-outline"
+            id="downloadResume">Download Resume ↓</button>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/anisha0506007-jpg"
+             target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
+          <a href="https://www.linkedin.com/in/anisha-parmar-9090353b8/"
+             target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+
+          <a href="mailto:anisha0506007@gmail.com">Email ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="profile-card">
+          <div class="profile-symbol">AP</div>
+          <p class="eyebrow">MY DEVELOPER JOURNEY</p>
+          <h3>Anisha Parmar</h3>
+          <p>BCA Student · Aspiring Full-Stack Developer</p>
+          <p>Learning through code. Growing through projects.</p>
+          <span class="profile-status">
+            ● Open to learning opportunities
+          </span>
+        </div>
+
+        <span class="floating float-one">✦ React & JavaScript</span>
+        <span class="floating float-two">⌘ Building real projects</span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">A LITTLE ABOUT ME</p>
+          <h2>Learning today.<br>
+            <span class="gradient">Building for tomorrow.</span>
+          </h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel">
+            <p class="panel-label">01 / INTRODUCTION</p>
+            <h3>Who I am</h3>
+            <p>
+              I am Anisha Parmar, currently pursuing a Bachelor of Computer
+              Applications (BCA) at Eternal University, Himachal Pradesh.
+              I am an aspiring full-stack developer with hands-on experience
+              building frontend and backend applications.
+            </p>
+          </article>
+
+          <article class="panel">
+            <p class="panel-label">02 / MY MINDSET</p>
+            <h3>How I grow</h3>
+            <p>
+              I enjoy exploring technologies, solving coding challenges,
+              debugging applications, and applying what I learn through
+              practical projects. My goal is to keep improving my skills
+              and contribute positively to a development team.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">MY TOOLKIT</p>
+          <h2>Skills & <span class="gradient">Technologies</span></h2>
+          <p>Technologies and tools I have worked with during my development journey.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="panel">
+            <div class="skill-symbol">⌘</div>
+            <h3>Frontend Development</h3>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span>
+              <span>JavaScript</span><span>React.js</span>
+              <span>React Query</span><span>React Router</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="skill-symbol">⚙</div>
+            <h3>Backend & Databases</h3>
+            <div class="tags">
+              <span>Node.js</span><span>Express.js</span>
+              <span>REST APIs</span><span>MongoDB</span>
+              <span>Mongoose</span><span>SQL</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="skill-symbol">✧</div>
+            <h3>Programming & AI</h3>
+            <div class="tags">
+              <span>JavaScript</span><span>Python</span>
+              <span>Gemini API</span><span>API Integration</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="skill-symbol">⌘</div>
+            <h3>Tools & Professional Skills</h3>
+            <div class="tags">
+              <span>Git</span><span>GitHub</span><span>VS Code</span>
+              <span>Debugging</span><span>Problem Solving</span>
+              <span>Clean Code</span><span>Communication</span>
+              <span>Teamwork</span><span>Adaptability</span>
+              <span>Time Management</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2>Projects that <span class="gradient">I built.</span></h2>
+          <p>Explore my practical work in frontend and full-stack development.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="panel project-card">
+            <div class="project-art art-one">
+              <span class="art-icon">▦</span>
+              <span class="art-number">01</span>
+            </div>
+            <div class="project-content">
+              <p class="panel-label">PROJECT MANAGEMENT</p>
+              <h3>Agile Issue Tracker</h3>
+              <p>
+                A Kanban issue tracker for managing tickets, priorities,
+                statuses, and assignees. React Query supports server-state
+                management and optimistic updates.
+              </p>
+              <div class="tags">
+                <span>React</span><span>JavaScript</span>
+                <span>React Query</span><span>REST API</span>
+              </div>
+              <a class="project-link"
+                href="https://agile-issue-tracker-zeta.vercel.app/"
+                target="_blank" rel="noopener noreferrer">
+                View Live Project ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="panel project-card">
+            <div class="project-art art-two">
+              <span class="art-icon">✉</span>
+              <span class="art-number">02</span>
+            </div>
+            <div class="project-content">
+              <p class="panel-label">FULL-STACK DEVELOPMENT</p>
+              <h3>Student Feedback Manager</h3>
+              <p>
+                A feedback application with a responsive frontend,
+                backend API, and MongoDB database integration using Mongoose.
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                <span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+              </div>
+              <a class="project-link"
+                href="https://student-feedback-generator-orcin.vercel.app/index.html"
+                target="_blank" rel="noopener noreferrer">
+                View Live Project ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="panel project-card">
+            <div class="project-art art-three">
+              <span class="art-icon">🛍</span>
+              <span class="art-number">03</span>
+            </div>
+            <div class="project-content">
+              <p class="panel-label">E-COMMERCE</p>
+              <h3>Nexus E-Commerce</h3>
+              <p>
+                A React e-commerce project focused on product browsing,
+                navigation, and reusable frontend components.
+              </p>
+              <div class="tags">
+                <span>React</span><span>React Router</span>
+                <span>Context API</span><span>REST API</span>
+              </div>
+              <a class="project-link"
+                href="https://capstone-project-e-commerce.vercel.app/products"
+                target="_blank" rel="noopener noreferrer">
+                View Live Project ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="panel project-card">
+            <div class="project-art art-four">
+              <span class="art-icon">✓</span>
+              <span class="art-number">04</span>
+            </div>
+            <div class="project-content">
+              <p class="panel-label">STUDENT PRODUCTIVITY</p>
+              <h3>Student Progress Tracker</h3>
+              <p>
+                A student progress tracking application designed to record
+                course progress and manage student learning information.
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span>
+                <span>JavaScript</span><span>Backend</span><span>MongoDB</span>
+              </div>
+              <a class="project-link"
+                href="https://project-tracker-sepia-two.vercel.app/"
+                target="_blank" rel="noopener noreferrer">
+                View Live Project ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="panel project-card">
+            <div class="project-art art-five">
+              <span class="art-icon">?</span>
+              <span class="art-number">05</span>
+            </div>
+            <div class="project-content">
+              <p class="panel-label">INTERACTIVE WEB APP</p>
+              <h3>Quiz Generator</h3>
+              <p>
+                A browser-based quiz application that generates quizzes,
+                checks answers, calculates scores, and provides result feedback.
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <a class="project-link"
+                href="https://anisha0506007-jpg.github.io/Quiz_Generator/"
+                target="_blank" rel="noopener noreferrer">
+                View Live Project ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="panel project-card">
+            <div class="project-art art-six">
+              <span class="art-icon">✦</span>
+              <span class="art-number">06</span>
+            </div>
+            <div class="project-content">
+              <p class="panel-label">OPPORTUNITY DISCOVERY</p>
+              <h3>Opportunity Hub</h3>
+              <p>
+                A platform for discovering jobs, internships, scholarships,
+                and competitions, with search, filters, and saved favorites.
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span>
+                <span>JavaScript</span><span>Search & Filters</span>
+              </div>
+              <a class="project-link"
+                href="https://anisha0506007-jpg.github.io/opportunityHUB/"
+                target="_blank" rel="noopener noreferrer">
+                View Live Project ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- All GitHub projects -->
+        <div class="github-cta">
+          <p class="eyebrow">MORE OF MY WORK</p>
+          <h3>Explore all my repositories.</h3>
+          <p>
+            Explore my GitHub repositories to see more projects,
+            source code, and what I am learning.
+          </p>
+          <a class="btn btn-primary"
+            href="https://github.com/anisha0506007-jpg?tab=repositories"
+            target="_blank" rel="noopener noreferrer">
+            <span>View All Projects on GitHub ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">MY EDUCATION</p>
+          <h2>Where my journey <span class="gradient">continues.</span></h2>
+        </div>
+
+        <article class="panel education-card">
+          <div class="education-icon">⌂</div>
+          <div>
+            <p class="panel-label">BACHELOR'S DEGREE · 2025–2028</p>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p class="muted">Eternal University, Himachal Pradesh</p>
+            <p>
+              Building a foundation in computer applications and developing
+              practical skills through programming, web development,
+              databases, and software projects.
+            </p>
+          </div>
+        </article>
+
+        <article class="panel strengths">
+          <p class="panel-label">MY STRENGTHS</p>
+          <div class="tags">
+            <span>Problem Solving</span><span>Debugging</span>
+            <span>Clean Code</span><span>API Integration</span>
+            <span>Communication</span><span>Teamwork</span>
+            <span>Leadership</span><span>Adaptability</span>
+            <span>Time Management</span><span>Continuous Learning</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2>Have an opportunity?<br>
+            <span class="gradient">Let's talk.</span>
+          </h2>
+          <p>
+            I'm interested in developer internships, learning opportunities,
+            and connecting with people who enjoy building useful technology.
+          </p>
+
+          <div class="buttons center-buttons">
+            <a class="btn btn-primary"
+              href="mailto:anisha0506007@gmail.com">Email Me ↗</a>
+
+            <a class="btn btn-outline"
+              href="https://www.linkedin.com/in/anisha-parmar-9090353b8/"
+              target="_blank" rel="noopener noreferrer">
+              Connect on LinkedIn ↗
+            </a>
+
+            <a class="btn btn-outline"
+              href="https://github.com/anisha0506007-jpg?tab=repositories"
+              target="_blank" rel="noopener noreferrer">
+              GitHub Repositories ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#home" class="logo">AP<span>.</span></a>
+      <p>Designed and built by Anisha Parmar · <span id="year"></span></p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Resume Modal -->
+  <div class="resume-modal" id="resumeModal"
+    aria-hidden="true" role="dialog"
+    aria-modal="true" aria-labelledby="resumeTitle">
+
+    <div class="modal-inner">
+      <div class="modal-toolbar">
+        <strong id="resumeTitle">Resume Preview</strong>
+        <div class="modal-actions">
+          <button type="button" id="printResume">Save Resume as PDF ↓</button>
+          <button type="button" id="closeResume"
+            class="close-modal" aria-label="Close resume">✕</button>
+        </div>
+      </div>
+
+      <article class="resume-paper" id="resumePaper">
+        <h1>ANISHA PARMAR</h1>
+        <p class="resume-subtitle">
+          BCA Student | Aspiring Full-Stack Developer
+        </p>
+        <p class="resume-contact">
+          Uttarakhand, India | +91 7452069533 |
+          anisha0506007@gmail.com
+        </p>
+
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>
+          BCA student and aspiring Full-Stack Developer with hands-on
+          experience in HTML, CSS, JavaScript, React, Node.js, Express.js,
+          MongoDB, SQL, and Python. Skilled in building practical frontend
+          and backend applications, solving problems, and continuously
+          learning new technologies, with an interest in AI-powered applications.
+        </p>
+
+        <h2>TECHNICAL SKILLS</h2>
+        <ul>
+          <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React.js</li>
+          <li><strong>Backend:</strong> Node.js, Express.js, REST APIs</li>
+          <li><strong>Databases:</strong> MongoDB, Mongoose, SQL</li>
+          <li><strong>Programming:</strong> JavaScript, Python</li>
+          <li><strong>AI & Tools:</strong> Gemini API, Git, GitHub, VS Code</li>
+        </ul>
+
+        <h2>PROJECTS</h2>
+
+        <div class="resume-project">
+          <strong>Agile Issue Tracker</strong>
+          <p class="resume-small">React, JavaScript, React Query, REST API</p>
+          <ul>
+            <li>Built a Kanban issue tracker with ticket management and status, priority, and assignee fields.</li>
+            <li>Used React Query for server-state management, optimistic updates, and rollback.</li>
+          </ul>
+        </div>
+
+        <div class="resume-project">
+          <strong>Student Feedback Manager</strong>
+          <p class="resume-small">HTML, CSS, JavaScript, Node.js, Express.js, MongoDB</p>
+          <ul>
+            <li>Built a full-stack feedback system with a responsive frontend, backend API, and MongoDB integration.</li>
+            <li>Implemented feedback submission and retrieval.</li>
+          </ul>
+        </div>
+
+        <div class="resume-project">
+          <strong>Opportunity Hub</strong>
+          <p class="resume-small">HTML, CSS, JavaScript</p>
+          <ul>
+            <li>Built a platform covering jobs, internships, scholarships, and competitions, with search and filters.</li>
+            <li>Added a favorites feature for saving opportunities.</li>
+          </ul>
+        </div>
+
+        <div class="resume-project">
+          <strong>Quiz Generator</strong>
+          <p class="resume-small">HTML, CSS, JavaScript</p>
+          <ul>
+            <li>Created an interactive quiz application with answer checking, scoring, and result feedback.</li>
+          </ul>
+        </div>
+
+        <div class="resume-project">
+          <strong>Nexus E-Commerce</strong>
+          <p class="resume-small">React, React Router, Context API, REST API</p>
+          <ul>
+            <li>Built an e-commerce project focused on product browsing, navigation, and reusable components.</li>
+          </ul>
+        </div>
+
+        <h2>EDUCATION</h2>
+        <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
+        <p>Eternal University, Himachal Pradesh | 2025–2028</p>
+
+        <h2>PROFESSIONAL STRENGTHS</h2>
+        <p>
+          Problem Solving · Debugging · Clean Code · API Integration ·
+          Communication · Teamwork · Leadership · Adaptability ·
+          Time Management · Continuous Learning
+        </p>
+
+        <h2>PROFILES</h2>
+        <p class="resume-small">
+          GitHub:
+          https://github.com/anisha0506007-jpg?tab=repositories
+        </p>
+        <p class="resume-small">
+          LinkedIn:
+          https://www.linkedin.com/in/anisha-parmar-9090353b8/
+        </p>
+      </article>
+    </div>
+  </div>
+
+</body>
+</html>
