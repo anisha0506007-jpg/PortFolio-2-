@@ -1,134 +1,186 @@
-
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.getElementById("themeIcon");
-const themeLabel = document.getElementById("themeLabel");
+function closeMenu() {
+  navLinks?.classList.remove("open");
+  menuBtn?.setAttribute("aria-expanded", "false");
+}
 
-const resumeModal = document.getElementById("resumeModal");
-const reviewResume = document.getElementById("reviewResume");
-const closeResume = document.getElementById("closeResume");
-
-const contactForm = document.getElementById("contactForm");
-const formStatus = document.getElementById("formStatus");
-const submitContact = document.getElementById("submitContact");
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-menuBtn.addEventListener("click", () => {
+menuBtn?.addEventListener("click", () => {
   const opened = navLinks.classList.toggle("open");
-
   menuBtn.setAttribute("aria-expanded", String(opened));
   menuBtn.setAttribute(
     "aria-label",
     opened ? "Close navigation" : "Open navigation"
   );
-
-  menuBtn.textContent = opened ? "✕" : "☰";
 });
 
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuBtn.setAttribute("aria-label", "Open navigation");
-    menuBtn.textContent = "☰";
-  });
+navLinks?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
 });
 
-function setTheme(theme) {
-  document.documentElement.dataset.theme = theme;
+document.addEventListener("click", (event) => {
+  if (
+    navLinks?.classList.contains("open") &&
+    !navLinks.contains(event.target) &&
+    !menuBtn?.contains(event.target)
+  ) {
+    closeMenu();
+  }
+});
 
-  const isLight = theme === "light";
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 820) closeMenu();
+});
 
-  themeIcon.textContent = isLight ? "☾" : "☀";
-  themeLabel.textContent = isLight ? "Dark" : "Light";
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+const themeLabel = document.getElementById("themeLabel");
+const root = document.documentElement;
 
-  themeToggle.setAttribute(
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+
+  const dark = theme === "dark";
+
+  if (themeIcon) themeIcon.textContent = dark ? "☀" : "☾";
+  if (themeLabel) themeLabel.textContent = dark ? "Light mode" : "Dark mode";
+
+  themeToggle?.setAttribute(
     "aria-label",
-    isLight ? "Switch to dark mode" : "Switch to light mode"
+    dark ? "Switch to light mode" : "Switch to dark mode"
   );
 }
 
-function getSavedTheme() {
-  try {
-    return localStorage.getItem("portfolio-theme");
-  } catch (error) {
-    return null;
-  }
+let savedTheme = "dark";
+
+try {
+  savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+} catch {
 }
 
-function saveTheme(theme) {
+applyTheme(savedTheme);
+
+themeToggle?.addEventListener("click", () => {
+  const current = root.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+
+  applyTheme(next);
+
   try {
-    localStorage.setItem("portfolio-theme", theme);
-  } catch (error) {
-    console.warn("Theme preference could not be saved.");
+    localStorage.setItem("portfolio-theme", next);
+  } catch {
   }
-}
-
-const savedTheme = getSavedTheme();
-
-setTheme(
-  savedTheme === "light" || savedTheme === "dark"
-    ? savedTheme
-    : "dark"
-);
-
-themeToggle.addEventListener("click", () => {
-  const currentTheme = document.documentElement.dataset.theme;
-  const nextTheme = currentTheme === "light" ? "dark" : "light";
-
-  setTheme(nextTheme);
-  saveTheme(nextTheme);
 });
+
+const resumeModal = document.getElementById("resumeModal");
+const reviewResume = document.getElementById("reviewResume");
+const closeResume = document.getElementById("closeResume");
+const modalBackdrop = document.getElementById("modalBackdrop");
+
+let previousFocus = null;
 
 function openResume() {
+  if (!resumeModal) return;
+
+  previousFocus = document.activeElement;
   resumeModal.classList.add("open");
   resumeModal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-  closeResume.focus();
+  document.body.classList.add("modal-open");
+  closeResume?.focus();
 }
 
-function closeResumeWindow() {
+function hideResume() {
+  if (!resumeModal) return;
+
   resumeModal.classList.remove("open");
   resumeModal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-  reviewResume.focus();
+  document.body.classList.remove("modal-open");
+
+  if (previousFocus && typeof previousFocus.focus === "function") {
+    previousFocus.focus();
+  }
 }
 
-reviewResume.addEventListener("click", openResume);
-
-closeResume.addEventListener("click", closeResumeWindow);
-
-resumeModal.addEventListener("click", (event) => {
-  if (event.target === resumeModal) {
-    closeResumeWindow();
-  }
-});
+reviewResume?.addEventListener("click", openResume);
+closeResume?.addEventListener("click", hideResume);
+modalBackdrop?.addEventListener("click", hideResume);
 
 document.addEventListener("keydown", (event) => {
   if (
     event.key === "Escape" &&
-    resumeModal.classList.contains("open")
+    resumeModal?.classList.contains("open")
   ) {
-    closeResumeWindow();
+    hideResume();
   }
 });
 
-contactForm.addEventListener("submit", async (event) => {
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -25px 0px"
+    }
+  );
+
+  revealElements.forEach((element) => observer.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("visible"));
+}
+
+const backToTop = document.getElementById("backToTop");
+
+function updateBackToTop() {
+  backToTop?.classList.toggle("visible", window.scrollY > 400);
+}
+
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+updateBackToTop();
+
+backToTop?.addEventListener("click", () => {
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  window.scrollTo({
+    top: 0,
+    behavior: reducedMotion ? "auto" : "smooth"
+  });
+});
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const submitBtn = document.getElementById("submitBtn");
+
+contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  formStatus.textContent = "";
-  formStatus.className = "form-status";
+  if (!contactForm.reportValidity()) return;
 
-  const formEndpoint = contactForm.action;
+  const originalButton = submitBtn?.innerHTML;
 
-  submitContact.disabled = true;
-  submitContact.textContent = "Sending message...";
+  if (formStatus) {
+    formStatus.textContent = "";
+    formStatus.className = "form-status";
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+  }
 
   try {
-    const response = await fetch(formEndpoint, {
+    const response = await fetch(contactForm.action, {
       method: "POST",
       body: new FormData(contactForm),
       headers: {
@@ -136,34 +188,34 @@ contactForm.addEventListener("submit", async (event) => {
       }
     });
 
-    const result = await response.json().catch(() => ({}));
-
-    if (response.ok) {
-      formStatus.textContent =
-        "Message submitted successfully! Please check your email or Formspree inbox for confirmation.";
-
-      formStatus.classList.add("success");
-      contactForm.reset();
-    } else {
-      const details = Array.isArray(result.errors)
-        ? result.errors.map((item) => item.message).join(" ")
-        : "";
-
-      formStatus.textContent =
-        details ||
-        `Message could not be sent (HTTP ${response.status}). Check your Formspree form settings.`;
-
-      formStatus.classList.add("error");
-      console.error("Formspree error:", result);
+    if (!response.ok) {
+      throw new Error("Unable to send the message.");
     }
-  } catch (error) {
-    formStatus.textContent =
-      "Network error. Check your internet connection and try again.";
 
-    formStatus.classList.add("error");
-    console.error("Contact form error:", error);
+    if (formStatus) {
+      formStatus.textContent =
+        "Thanks for reaching out! Your message was sent successfully.";
+      formStatus.classList.add("success");
+    }
+
+    contactForm.reset();
+  } catch (error) {
+    if (formStatus) {
+      formStatus.textContent =
+        "Message could not be sent. Please try again or email me directly.";
+      formStatus.classList.add("error");
+    }
   } finally {
-    submitContact.disabled = false;
-    submitContact.textContent = "Send Message ↗";
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML =
+        originalButton || 'Send message <span>↗</span>';
+    }
   }
 });
+
+const currentYear = document.getElementById("currentYear");
+
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}

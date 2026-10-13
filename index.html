@@ -1,506 +1,433 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Anisha Parmar's portfolio showcasing web development projects, technical skills, and resume.">
-  <meta name="theme-color" content="#080b14">
-  <title>Anisha Parmar | Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Anisha Parmar — BCA student and aspiring full-stack developer. Explore my projects, technical skills and certificates.">
+  <meta name="theme-color" content="#100e17">
+  <title>Anisha Parmar | Developer Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
-
 <body>
 
-  <header class="site-header">
-    <div class="container navbar">
-      <a href="#home" class="logo">AP<span>.</span></a>
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">anisha<span>.</span></a>
 
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation"
-        aria-expanded="false" aria-controls="navLinks">☰</button>
+        aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-      <nav class="nav-links" id="navLinks">
+      <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
+        <a href="#certificates">Certificates</a>
         <a href="#contact">Contact</a>
-      </nav>
+      </div>
 
-      <button class="theme-toggle" id="themeToggle" type="button"
-        aria-label="Switch to light mode">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
         <span id="themeIcon">☀</span>
-        <span id="themeLabel">Light</span>
+        <span id="themeLabel">Light mode</span>
       </button>
-    </div>
+    </nav>
   </header>
 
   <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <div class="availability">
+            <span class="status-dot"></span>
+            Open to opportunities
+          </div>
 
-    <section class="container hero" id="home">
-      <div class="hero-content">
-        <p class="eyebrow">BCA Student · Developer in Progress</p>
-        <h1><span class="gradient">Anisha Parmar.</span></h1>
-        <h2>Aspiring Full-Stack Developer</h2>
+          <p class="eyebrow">HELLO, I'M ANISHA PARMAR</p>
+          <h1>I build for the <span class="gradient-text">web.</span></h1>
+          <h2>Aspiring Full-Stack Developer</h2>
 
-        <p class="hero-description">
-          I build practical web applications using modern web technologies.
-          I enjoy solving problems, debugging applications, learning new
-          tools, and turning ideas into useful digital experiences.
-        </p>
+          <p class="hero-description">
+            I'm a BCA student who enjoys turning ideas into useful,
+            user-friendly web applications. I work with frontend
+            technologies and am expanding my skills in backend
+            development and databases.
+          </p>
 
-        <div class="buttons">
-          <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
-          <button type="button" class="btn btn-outline" id="reviewResume">
-            Review Resume ↗
-          </button>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore my work <span>↗</span></a>
+            <button class="btn btn-outline" id="reviewResume">View resume</button>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/anisha0506007-jpg" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/anisha-parmar-9090353b8/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:anisha0506007@gmail.com">Email ↗</a>
+          </div>
         </div>
 
-        <div class="socials">
-          <a href="https://github.com/anisha0506007-jpg"
-            target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-
-          <a href="https://www.linkedin.com/in/anisha-parmar-9090353b8/"
-            target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-
-          <a href="mailto:anisha0506007@gmail.com">Email ↗</a>
+        <div class="hero-side reveal">
+          <div class="developer-card">
+            <div class="card-window">
+              <span></span><span></span><span></span>
+              <small>developer.js</small>
+            </div>
+            <div class="code-content">
+              <p><span class="code-purple">const</span> developer = {</p>
+              <p class="indent"><span class="code-blue">name</span>: <span class="code-green">"Anisha"</span>,</p>
+              <p class="indent"><span class="code-blue">learning</span>: <span class="code-green">"Full Stack"</span>,</p>
+              <p class="indent"><span class="code-blue">loves</span>: [</p>
+              <p class="indent double-indent"><span class="code-green">"Building projects"</span>,</p>
+              <p class="indent double-indent"><span class="code-green">"Solving problems"</span>,</p>
+              <p class="indent double-indent"><span class="code-green">"Learning new things"</span></p>
+              <p class="indent">]</p>
+              <p>};</p>
+              <p class="code-comment">// always improving ✦</p>
+            </div>
+            <div class="code-footer">
+              <span><span class="status-dot"></span> Available to learn & collaborate</span>
+              <span>✦</span>
+            </div>
+          </div>
+          <div class="hero-note">Curiosity turns into code.</div>
         </div>
       </div>
 
-      <div class="hero-art">
-        <div class="profile-card">
-          <div class="profile-symbol">AP</div>
-          <p class="eyebrow">My Developer Journey</p>
-          <h3>Anisha Parmar</h3>
-          <p>BCA Student · Aspiring Full-Stack Developer</p>
-          <p>Learning through code. Growing through projects.</p>
-          <span class="profile-status">● Open to learning opportunities</span>
-        </div>
-
-        <span class="floating float-one">✦ React & JavaScript</span>
-        <span class="floating float-two">⌘ Building real projects</span>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">A Little About Me</p>
-          <h2>Learning today.<br><span class="gradient">Building for tomorrow.</span></h2>
-        </div>
-
-        <div class="about-grid">
-          <article class="panel">
-            <p class="panel-label">01 / INTRODUCTION</p>
-            <h3>Who I am</h3>
-            <p>
-              I am Anisha Parmar, currently pursuing a Bachelor of Computer
-              Applications (BCA) at Eternal University, Himachal Pradesh.
-              I am an aspiring full-stack developer with hands-on experience
-              building frontend and backend applications.
-            </p>
-          </article>
-
-          <article class="panel">
-            <p class="panel-label">02 / MY MINDSET</p>
-            <h3>How I grow</h3>
-            <p>
-              I enjoy exploring technologies, solving coding challenges,
-              debugging applications, and applying what I learn through
-              practical projects. My goal is to keep improving my skills
-              and contribute positively to a development team.
-            </p>
-          </article>
-        </div>
+      <div class="hero-bottom container">
+        <span>BASED IN INDIA</span>
+        <span class="hero-line"></span>
+        <span>DESIGN · CODE · LEARN</span>
       </div>
     </section>
 
-    <section id="skills">
+    <section class="section" id="about">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">My Toolkit</p>
-          <h2>Skills & <span class="gradient">Technologies</span></h2>
-          <p>Technologies and tools I have worked with during my development journey.</p>
+        <div class="section-heading reveal">
+          <span class="section-label">A LITTLE ABOUT ME</span>
+          <h2>Learning today.<br><span class="gradient-text">Building for tomorrow.</span></h2>
+          <p>My journey into development is driven by curiosity and hands-on learning.</p>
+        </div>
+
+        <div class="about-layout">
+          <article class="surface about-main reveal">
+            <span class="large-number">01 / ABOUT</span>
+            <h3>Turning what I learn into what I build.</h3>
+            <p>
+              I'm pursuing a Bachelor of Computer Applications at Eternal
+              University. I've worked with HTML, CSS, JavaScript and React,
+              and I'm currently strengthening my backend and MongoDB skills.
+            </p>
+            <p>
+              I learn best by building projects, testing ideas and improving
+              my code along the way. I'm looking for an internship where I
+              can contribute, learn from experienced developers and grow
+              through real-world development work.
+            </p>
+          </article>
+
+          <div class="about-side">
+            <article class="surface mini-card reveal">
+              <span class="mini-icon">⌘</span>
+              <h3>Build with purpose</h3>
+              <p>I enjoy creating practical websites that are clear, responsive and easy to use.</p>
+            </article>
+            <article class="surface mini-card reveal">
+              <span class="mini-icon">↗</span>
+              <h3>Keep improving</h3>
+              <p>Every project is a chance to learn something new and become a better problem solver.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-label">MY TOOLKIT</span>
+          <h2>Skills I use to <span class="gradient-text">create.</span></h2>
+          <p>Technologies I've learned and continue to practise through projects.</p>
         </div>
 
         <div class="skills-grid">
-          <article class="panel">
-            <div class="skill-symbol">⌘</div>
-            <h3>Frontend Development</h3>
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
-              <span>React.js</span><span>React Query</span><span>React Router</span>
-            </div>
+          <article class="surface skill-card reveal">
+            <div class="skill-heading"><span>01</span><span class="skill-icon">◈</span></div>
+            <h3>Frontend</h3>
+            <p>Building responsive interfaces and interactive user experiences.</p>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span></div>
           </article>
 
-          <article class="panel">
-            <div class="skill-symbol">⚙</div>
-            <h3>Backend & Databases</h3>
-            <div class="tags">
-              <span>Node.js</span><span>Express.js</span><span>REST APIs</span>
-              <span>MongoDB</span><span>Mongoose</span><span>SQL</span>
-            </div>
+          <article class="surface skill-card reveal">
+            <div class="skill-heading"><span>02</span><span class="skill-icon">⌘</span></div>
+            <h3>Backend</h3>
+            <p>Learning server-side logic and how web applications handle data.</p>
+            <div class="tags"><span>Node.js</span><span>Express.js</span><span>REST APIs</span></div>
           </article>
 
-          <article class="panel">
-            <div class="skill-symbol">✧</div>
-            <h3>Programming & AI</h3>
-            <div class="tags">
-              <span>JavaScript</span><span>Python</span>
-              <span>Gemini API</span><span>API Integration</span>
-            </div>
+          <article class="surface skill-card reveal">
+            <div class="skill-heading"><span>03</span><span class="skill-icon">▤</span></div>
+            <h3>Database</h3>
+            <p>Exploring data storage and document-based database workflows.</p>
+            <div class="tags"><span>MongoDB</span><span>NoSQL</span></div>
           </article>
 
-          <article class="panel">
-            <div class="skill-symbol">⌘</div>
-            <h3>Tools & Professional Skills</h3>
-            <div class="tags">
-              <span>Git</span><span>GitHub</span><span>VS Code</span>
-              <span>Debugging</span><span>Problem Solving</span>
-              <span>Clean Code</span><span>Communication</span>
-              <span>Teamwork</span><span>Adaptability</span>
-              <span>Time Management</span>
-            </div>
+          <article class="surface skill-card reveal">
+            <div class="skill-heading"><span>04</span><span class="skill-icon">⌁</span></div>
+            <h3>Tools & workflow</h3>
+            <p>Tools and habits that help me build, debug and manage code.</p>
+            <div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Debugging</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section class="section" id="projects">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Selected Work</p>
-          <h2>Projects that <span class="gradient">I built.</span></h2>
-          <p>Explore my practical work in frontend and full-stack development.</p>
+        <div class="section-heading reveal">
+          <span class="section-label">SELECTED WORK</span>
+          <h2>Projects built through <span class="gradient-text">practice.</span></h2>
+          <p>A selection of projects where I've applied my development skills.</p>
         </div>
 
         <div class="projects-grid">
-
-          <article class="panel project-card">
-            <div class="project-art art-one">
-              <span class="art-icon">▦</span><span class="art-number">01</span>
-            </div>
-            <div class="project-content">
-              <p class="panel-label">PROJECT MANAGEMENT</p>
-              <h3>Agile Issue Tracker</h3>
-              <p>
-                A Kanban issue tracker for managing tickets, priorities,
-                statuses, and assignees. React Query supports server-state
-                management and optimistic updates.
-              </p>
-              <div class="tags">
-                <span>React</span><span>JavaScript</span>
-                <span>React Query</span><span>REST API</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link"
-                  href="https://agile-issue-tracker-zeta.vercel.app/"
-                  target="_blank" rel="noopener noreferrer">View Live Project ↗</a>
-                <a class="project-link source-link"
-                  href="https://github.com/anisha0506007-jpg/Agile-issue-tracker"
-                  target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-              </div>
+          <article class="surface project-card reveal">
+            <div class="project-meta"><span>01 / PROJECT</span><span>↗</span></div>
+            <div class="project-symbol">◫</div>
+            <h3>Agile Issue Tracker</h3>
+            <p>A project-management interface for organising issues, following task progress and keeping team workflows structured.</p>
+            <div class="tags"><span>React</span><span>JavaScript</span><span>API</span></div>
+            <div class="project-links">
+              <a href="https://agile-issue-tracker-zeta.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+              <a href="https://github.com/anisha0506007-jpg/Agile-issue-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
           </article>
 
-          <article class="panel project-card">
-            <div class="project-art art-two">
-              <span class="art-icon">✉</span><span class="art-number">02</span>
-            </div>
-            <div class="project-content">
-              <p class="panel-label">FULL-STACK DEVELOPMENT</p>
-              <h3>Student Feedback Manager</h3>
-              <p>
-                A feedback application with a responsive frontend, backend API,
-                and MongoDB database integration using Mongoose.
-              </p>
-              <div class="tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-                <span>Node.js</span><span>Express.js</span><span>MongoDB</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link"
-                  href="https://student-feedback-generator-orcin.vercel.app/index.html"
-                  target="_blank" rel="noopener noreferrer">View Live Project ↗</a>
-                <a class="project-link source-link"
-                  href="https://github.com/anisha0506007-jpg/Student_Feedback_generator"
-                  target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-              </div>
+          <article class="surface project-card reveal">
+            <div class="project-meta"><span>02 / PROJECT</span><span>↗</span></div>
+            <div class="project-symbol">◇</div>
+            <h3>Nexus E-Commerce</h3>
+            <p>An online shopping experience focused on product discovery, clean layouts and intuitive navigation.</p>
+            <div class="tags"><span>React</span><span>JavaScript</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://capstone-project-e-commerce.vercel.app/products" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+              <a href="https://github.com/anisha0506007-jpg/Capstone-Project-E-commerce-" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
           </article>
 
-          <article class="panel project-card">
-            <div class="project-art art-three">
-              <span class="art-icon">🛍</span><span class="art-number">03</span>
-            </div>
-            <div class="project-content">
-              <p class="panel-label">E-COMMERCE</p>
-              <h3>Nexus E-Commerce</h3>
-              <p>
-                A React e-commerce project focused on product browsing,
-                navigation, and reusable frontend components.
-              </p>
-              <div class="tags">
-                <span>React</span><span>React Router</span>
-                <span>Context API</span><span>REST API</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link"
-                  href="https://capstone-project-e-commerce.vercel.app/products"
-                  target="_blank" rel="noopener noreferrer">View Live Project ↗</a>
-                <a class="project-link source-link"
-                  href="https://github.com/anisha0506007-jpg/Capstone-Project-E-commerce-"
-                  target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-              </div>
+          <article class="surface project-card reveal">
+            <div class="project-meta"><span>03 / PROJECT</span><span>↗</span></div>
+            <div class="project-symbol">◎</div>
+            <h3>Student Feedback Manager</h3>
+            <p>A feedback application designed to make collecting and managing student responses more organised.</p>
+            <div class="tags"><span>Frontend</span><span>Backend</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="https://student-feedback-generator-orcin.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+              <a href="https://github.com/anisha0506007-jpg/Student_Feedback_generator" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
           </article>
 
-          <article class="panel project-card">
-            <div class="project-art art-four">
-              <span class="art-icon">✓</span><span class="art-number">04</span>
-            </div>
-            <div class="project-content">
-              <p class="panel-label">STUDENT PRODUCTIVITY</p>
-              <h3>Student Progress Tracker</h3>
-              <p>
-                A student progress tracking application designed to record
-                course progress and manage student learning information.
-              </p>
-              <div class="tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-                <span>Backend</span><span>MongoDB</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link"
-                  href="https://project-tracker-sepia-two.vercel.app/"
-                  target="_blank" rel="noopener noreferrer">View Live Project ↗</a>
-                <a class="project-link source-link"
-                  href="https://github.com/anisha0506007-jpg/Project-tracker"
-                  target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-              </div>
+          <article class="surface project-card reveal">
+            <div class="project-meta"><span>04 / PROJECT</span><span>↗</span></div>
+            <div class="project-symbol">▥</div>
+            <h3>Student Progress Tracker</h3>
+            <p>A student-focused project for organising progress information and presenting it in a simple interface.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="https://project-tracker-sepia-two.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+              <a href="https://github.com/anisha0506007-jpg/Project-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
           </article>
 
-          <article class="panel project-card">
-            <div class="project-art art-five">
-              <span class="art-icon">?</span><span class="art-number">05</span>
-            </div>
-            <div class="project-content">
-              <p class="panel-label">INTERACTIVE WEB APP</p>
-              <h3>Quiz Generator</h3>
-              <p>
-                A browser-based quiz application that generates quizzes,
-                checks answers, calculates scores, and provides result feedback.
-              </p>
-              <div class="tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link"
-                  href="https://anisha0506007-jpg.github.io/Quiz_Generator/"
-                  target="_blank" rel="noopener noreferrer">View Live Project ↗</a>
-                <a class="project-link source-link"
-                  href="https://github.com/anisha0506007-jpg/Quiz_Generator"
-                  target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-              </div>
+          <article class="surface project-card reveal">
+            <div class="project-meta"><span>05 / PROJECT</span><span>↗</span></div>
+            <div class="project-symbol">?</div>
+            <h3>Quiz Generator</h3>
+            <p>An interactive quiz project that helped me practise JavaScript logic, event handling and dynamic webpage updates.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="https://anisha0506007-jpg.github.io/Quiz_Generator/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+              <a href="https://github.com/anisha0506007-jpg/Quiz_Generator" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
           </article>
 
-          <article class="panel project-card">
-            <div class="project-art art-six">
-              <span class="art-icon">✦</span><span class="art-number">06</span>
-            </div>
-            <div class="project-content">
-              <p class="panel-label">OPPORTUNITY DISCOVERY</p>
-              <h3>Opportunity Hub</h3>
-              <p>
-                A platform for discovering jobs, internships, scholarships,
-                and competitions, with search, filters, and saved favorites.
-              </p>
-              <div class="tags">
-                <span>HTML</span><span>CSS</span>
-                <span>JavaScript</span><span>Search & Filters</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link"
-                  href="https://anisha0506007-jpg.github.io/opportunityHUB/"
-                  target="_blank" rel="noopener noreferrer">View Live Project ↗</a>
-                <a class="project-link source-link"
-                  href="https://github.com/anisha0506007-jpg/opportunityHUB"
-                  target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
-              </div>
+          <article class="surface project-card reveal">
+            <div class="project-meta"><span>06 / PROJECT</span><span>↗</span></div>
+            <div class="project-symbol">✳</div>
+            <h3>Opportunity Hub</h3>
+            <p>A student-focused platform concept for discovering opportunities such as internships, jobs and scholarships.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="https://anisha0506007-jpg.github.io/opportunityHUB/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+              <a href="https://github.com/anisha0506007-jpg/opportunityHUB" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
           </article>
-
-        </div>
-
-        <div class="github-cta">
-          <p class="eyebrow">More of My Work</p>
-          <h3>Explore all my repositories.</h3>
-          <p>
-            Explore my GitHub repositories to see more projects, source code,
-            and what I am learning.
-          </p>
-          <a class="btn btn-primary"
-            href="https://github.com/anisha0506007-jpg?tab=repositories"
-            target="_blank" rel="noopener noreferrer">
-            View All Projects on GitHub ↗
-          </a>
         </div>
       </div>
     </section>
 
-    <section id="education">
+    <section class="section section-muted" id="certificates">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">My Education</p>
-          <h2>Where my journey <span class="gradient">continues.</span></h2>
+        <div class="section-heading reveal">
+          <span class="section-label">PROOF OF LEARNING</span>
+          <h2>Learning that goes <span class="gradient-text">beyond code.</span></h2>
+          <p>
+            Each course helped me explore a technology, strengthen a foundation
+            or follow a new area of curiosity. Open a certificate to view it.
+          </p>
         </div>
 
-        <article class="panel education-card">
-          <div class="education-icon">⌂</div>
-          <div>
-            <p class="panel-label">BACHELOR'S DEGREE · 2025–2028</p>
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <p class="muted">Eternal University, Himachal Pradesh</p>
+        <div class="certificates-grid">
+          <article class="surface certificate-card reveal">
+            <div class="certificate-top"><span class="certificate-icon">01</span><span class="certificate-type">DEVELOPMENT</span></div>
+            <h3>React Development Bootcamp</h3>
             <p>
-              Building a foundation in computer applications and developing
-              practical skills through programming, web development,
-              databases, and software projects.
+              Strengthened my frontend development practice through React,
+              reusable components and interactive interfaces. The bootcamp
+              supported my learning through hands-on project work.
+            </p>
+            <div class="tags"><span>React</span><span>JavaScript</span><span>Components</span></div>
+            <a class="certificate-link" href="https://drive.google.com/file/d/1rIqESjIK8-xd852cvMPND7ETnLDgY4F0/view?usp=sharing" target="_blank" rel="noopener noreferrer">View certificate <span>↗</span></a>
+          </article>
+
+          <article class="surface certificate-card reveal">
+            <div class="certificate-top"><span class="certificate-icon">02</span><span class="certificate-type">DATABASE</span></div>
+            <h3>MongoDB</h3>
+            <p>
+              Expanded my understanding of NoSQL databases and document-based
+              data. This learning connects with my goal of developing
+              full-stack applications with a database-backed server.
+            </p>
+            <div class="tags"><span>MongoDB</span><span>NoSQL</span><span>Data</span></div>
+            <a class="certificate-link" href="https://drive.google.com/file/d/1TXYbsA-ywqTK2xm5KZA1TEPF8DHkG7vz/view?usp=sharing" target="_blank" rel="noopener noreferrer">View certificate <span>↗</span></a>
+          </article>
+
+          <article class="surface certificate-card reveal">
+            <div class="certificate-top"><span class="certificate-icon">03</span><span class="certificate-type">WEB DESIGN</span></div>
+            <h3>Frontend Development</h3>
+            <p>
+              Built a foundation in creating web pages by combining structure,
+              styling and interactivity. These skills help me create
+              responsive interfaces with a focus on usability.
+            </p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="certificate-link" href="https://drive.google.com/file/d/1Yd3SMWKkkAaDutTd1BeXzObaVB_gvcCi/view?usp=sharing" target="_blank" rel="noopener noreferrer">View certificate <span>↗</span></a>
+          </article>
+
+          <article class="surface certificate-card reveal">
+            <div class="certificate-top"><span class="certificate-icon">04</span><span class="certificate-type">EXPLORATION</span></div>
+            <h3>Digital Marketing</h3>
+            <p>
+              I became curious about how marketing works and how businesses
+              connect with people online. That interest encouraged me to take
+              a digital marketing course and explore online promotion,
+              audience engagement and digital presence.
+            </p>
+            <div class="tags"><span>Marketing</span><span>Digital Presence</span><span>Audiences</span></div>
+            <a class="certificate-link" href="https://drive.google.com/file/d/1nxC55JdDH9eog_VHCZacDuQgTNXC2MQu/view?usp=sharing" target="_blank" rel="noopener noreferrer">View certificate <span>↗</span></a>
+          </article>
+        </div>
+
+        <p class="certificate-note reveal">Learn something new. Apply it. Keep moving forward.</p>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-label">MY FOUNDATION</span>
+          <h2>Education & <span class="gradient-text">growth.</span></h2>
+        </div>
+        <article class="surface education-card reveal">
+          <div class="education-mark">EU</div>
+          <div>
+            <span class="education-date">2025 — 2028</span>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p class="education-place">Eternal University</p>
+            <p class="education-description">
+              Studying computer applications while building practical web
+              development skills through projects, coursework and continuous learning.
             </p>
           </div>
         </article>
-
-        <article class="panel strengths">
-          <p class="panel-label">MY STRENGTHS</p>
-          <div class="tags">
-            <span>Problem Solving</span><span>Debugging</span>
-            <span>Clean Code</span><span>API Integration</span>
-            <span>Communication</span><span>Teamwork</span>
-            <span>Leadership</span><span>Adaptability</span>
-            <span>Time Management</span><span>Continuous Learning</span>
-          </div>
-        </article>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section section-muted" id="contact">
       <div class="container">
-        <div class="contact-box">
-          <p class="eyebrow">Let's Connect</p>
-          <h2>Have a question?<br><span class="gradient">Let's talk.</span></h2>
+        <div class="section-heading reveal">
+          <span class="section-label">GET IN TOUCH</span>
+          <h2>Let's make something <span class="gradient-text">meaningful.</span></h2>
           <p>
-            Have a question about my projects, an internship opportunity,
-            or an idea to discuss? Send me a message using the form below.
+            Looking for an enthusiastic learner or want to discuss a project?
+            I'd be happy to connect.
           </p>
+        </div>
 
-          <form class="contact-form" id="contactForm"
-            action="https://formspree.io/f/xljgwyna" method="POST">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">Your Name</label>
-                <input type="text" id="contactName" name="name"
-                  placeholder="Enter your name" autocomplete="name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="contactEmail">Your Email</label>
-                <input type="email" id="contactEmail" name="email"
-                  placeholder="you@example.com" autocomplete="email" required>
-              </div>
+        <div class="contact-layout">
+          <div class="contact-copy reveal">
+            <h3>Have an opportunity?</h3>
+            <p>
+              I'm interested in full-stack development internships,
+              collaborative projects and opportunities to learn from a team.
+            </p>
+            <a class="contact-email" href="mailto:anisha0506007@gmail.com">anisha0506007@gmail.com ↗</a>
+            <div class="contact-socials">
+              <a href="https://github.com/anisha0506007-jpg" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/anisha-parmar-9090353b8/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
-
-            <div class="form-group">
-              <label for="contactSubject">Subject</label>
-              <input type="text" id="contactSubject" name="subject"
-                placeholder="What would you like to discuss?" required>
-            </div>
-
-            <div class="form-group">
-              <label for="contactMessage">Your Question or Message</label>
-              <textarea id="contactMessage" name="message" rows="6"
-                placeholder="Write your question or message here..."
-                required></textarea>
-            </div>
-
-            <input type="text" name="_gotcha" class="honeypot"
-              tabindex="-1" autocomplete="off" aria-hidden="true">
-
-            <button type="submit" class="btn btn-primary submit-btn"
-              id="submitContact">Send Message ↗</button>
-
-            <p class="form-status" id="formStatus"
-              role="status" aria-live="polite"></p>
-          </form>
-
-          <div class="contact-divider"><span>OR CONNECT DIRECTLY</span></div>
-
-          <div class="buttons center-buttons">
-            <a class="btn btn-outline"
-              href="mailto:anisha0506007@gmail.com">Email Me ↗</a>
-
-            <a class="btn btn-outline"
-              href="https://www.linkedin.com/in/anisha-parmar-9090353b8/"
-              target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
-
-            <a class="btn btn-outline"
-              href="https://github.com/anisha0506007-jpg?tab=repositories"
-              target="_blank" rel="noopener noreferrer">GitHub Repositories ↗</a>
           </div>
+
+          <form class="surface contact-form reveal" id="contactForm"
+            action="https://formspree.io/f/xljgwyna" method="POST">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="How should I call you?" required>
+
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me a little about your message..." required></textarea>
+
+            <button class="btn btn-primary submit-btn" id="submitBtn" type="submit">Send message <span>↗</span></button>
+            <p class="form-status" id="formStatus" aria-live="polite" role="status"></p>
+          </form>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <a href="#home" class="logo">AP<span>.</span></a>
-      <p>Designed and built by Anisha Parmar · <span id="year"></span></p>
-      <a href="#home">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <!-- GOOGLE DRIVE RESUME MODAL -->
-  <div class="resume-modal" id="resumeModal"
-    aria-hidden="true" role="dialog" aria-modal="true"
-    aria-labelledby="resumeTitle">
-
-    <div class="modal-inner">
-      <div class="modal-toolbar">
-        <strong id="resumeTitle">Anisha Parmar — Resume</strong>
-
-        <div class="modal-actions">
-          <a
-            href="https://drive.google.com/file/d/1yYGHIlvVY2tT-Zn8bBDlURCNZ8A5L6ty/view?usp=drive_link"
-            target="_blank" rel="noopener noreferrer"
-            class="resume-action">
-            Open Resume ↗
-          </a>
-
-          <a
-            href="https://drive.google.com/uc?export=download&id=1yYGHIlvVY2tT-Zn8bBDlURCNZ8A5L6ty"
-            target="_blank" rel="noopener noreferrer"
-            class="resume-action">
-            Download Resume ↓
-          </a>
-
-          <button type="button" id="closeResume"
-            class="close-modal" aria-label="Close resume">✕</button>
-        </div>
+  <div class="resume-modal" id="resumeModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-inner" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+      <div class="modal-heading">
+        <div><span class="section-label">MY RESUME</span><h2 id="resumeTitle">Anisha Parmar</h2></div>
+        <button class="close-modal" id="closeResume" aria-label="Close resume">✕</button>
       </div>
 
-      <iframe
+      <div class="modal-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1yYGHIlvVY2tT-Zn8bBDlURCNZ8A5L6ty/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Open in Drive ↗</a>
+        <a class="btn btn-outline" href="https://drive.google.com/uc?export=download&id=1yYGHIlvVY2tT-Zn8bBDlURCNZ8A5L6ty" target="_blank" rel="noopener noreferrer">Download PDF ↓</a>
+      </div>
+
+      <iframe class="resume-frame"
         src="https://drive.google.com/file/d/1yYGHIlvVY2tT-Zn8bBDlURCNZ8A5L6ty/preview"
-        class="resume-frame"
-        title="Anisha Parmar Resume PDF"
-        loading="lazy">
-      </iframe>
+        title="Anisha Parmar resume" loading="lazy"></iframe>
+      <p class="resume-hint">If the preview is unavailable, open the resume directly in Google Drive.</p>
     </div>
   </div>
 
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">anisha<span>.</span></a>
+      <p>Designed with intention. Built with curiosity.</p>
+      <p>© <span id="currentYear"></span> Anisha Parmar</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
