@@ -1,7 +1,3 @@
-// ========================================
-// 1. SELECT HTML ELEMENTS
-// ========================================
-
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
@@ -12,23 +8,21 @@ const themeLabel = document.getElementById("themeLabel");
 const resumeModal = document.getElementById("resumeModal");
 const reviewResume = document.getElementById("reviewResume");
 const closeResume = document.getElementById("closeResume");
-const downloadResume = document.getElementById("downloadResume");
 const printResume = document.getElementById("printResume");
 
-// Automatically update the footer year.
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const submitContact = document.getElementById("submitContact");
+
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
 
-// ========================================
-// 2. MOBILE NAVIGATION
-// ========================================
 
 menuBtn.addEventListener("click", () => {
   const opened = navLinks.classList.toggle("open");
 
   menuBtn.setAttribute("aria-expanded", String(opened));
-
   menuBtn.setAttribute(
     "aria-label",
     opened ? "Close navigation" : "Open navigation"
@@ -37,22 +31,16 @@ menuBtn.addEventListener("click", () => {
   menuBtn.textContent = opened ? "✕" : "☰";
 });
 
-// Close the mobile menu after selecting a link.
 navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
-
     menuBtn.setAttribute("aria-expanded", "false");
     menuBtn.setAttribute("aria-label", "Open navigation");
-
     menuBtn.textContent = "☰";
   });
 });
 
 
-// ========================================
-// 3. LIGHT MODE AND DARK MODE
-// ========================================
 
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
@@ -64,13 +52,10 @@ function setTheme(theme) {
 
   themeToggle.setAttribute(
     "aria-label",
-    isLight
-      ? "Switch to dark mode"
-      : "Switch to light mode"
+    isLight ? "Switch to dark mode" : "Switch to light mode"
   );
 }
 
-// Read the previously saved theme.
 function getSavedTheme() {
   try {
     return localStorage.getItem("portfolio-theme");
@@ -79,7 +64,6 @@ function getSavedTheme() {
   }
 }
 
-// Save the selected theme safely.
 function saveTheme(theme) {
   try {
     localStorage.setItem("portfolio-theme", theme);
@@ -88,7 +72,6 @@ function saveTheme(theme) {
   }
 }
 
-// Use the saved theme, or default to dark mode.
 const savedTheme = getSavedTheme();
 
 setTheme(
@@ -97,64 +80,42 @@ setTheme(
     : "dark"
 );
 
-// Switch themes when the button is clicked.
 themeToggle.addEventListener("click", () => {
-  const currentTheme =
-    document.documentElement.dataset.theme;
-
-  const nextTheme =
-    currentTheme === "light" ? "dark" : "light";
+  const currentTheme = document.documentElement.dataset.theme;
+  const nextTheme = currentTheme === "light" ? "dark" : "light";
 
   setTheme(nextTheme);
   saveTheme(nextTheme);
 });
 
 
-// ========================================
-// 4. OPEN THE RESUME PREVIEW
-// ========================================
-
 function openResume() {
   resumeModal.classList.add("open");
-
   resumeModal.setAttribute("aria-hidden", "false");
 
   document.body.style.overflow = "hidden";
-
   closeResume.focus();
 }
 
-// Open the resume using either button.
 reviewResume.addEventListener("click", openResume);
 
 
-// ========================================
-// 5. CLOSE THE RESUME PREVIEW
-// ========================================
-
 function closeResumeWindow() {
   resumeModal.classList.remove("open");
-
   resumeModal.setAttribute("aria-hidden", "true");
 
   document.body.style.overflow = "";
-
   reviewResume.focus();
 }
 
-closeResume.addEventListener(
-  "click",
-  closeResumeWindow
-);
+closeResume.addEventListener("click", closeResumeWindow);
 
-// Close when the user clicks the dark overlay.
 resumeModal.addEventListener("click", (event) => {
   if (event.target === resumeModal) {
     closeResumeWindow();
   }
 });
 
-// Close the resume when Escape is pressed.
 document.addEventListener("keydown", (event) => {
   if (
     event.key === "Escape" &&
@@ -165,9 +126,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-// ========================================
-// 6. DOWNLOAD RESUME AS PDF
-// ========================================
 
 function saveResumeAsPDF() {
   const resume = document.getElementById("resumePaper");
@@ -177,14 +135,12 @@ function saveResumeAsPDF() {
     return;
   }
 
-  // Open a separate window containing only the resume.
   const printWindow = window.open(
     "",
     "_blank",
     "width=900,height=750"
   );
 
-  // The browser may block pop-up windows.
   if (!printWindow) {
     alert(
       "The print window was blocked. Allow pop-ups " +
@@ -193,7 +149,6 @@ function saveResumeAsPDF() {
     return;
   }
 
-  // Dedicated A4 styling for the printed resume.
   const printStyles = `
     <style>
       @page {
@@ -263,7 +218,6 @@ function saveResumeAsPDF() {
     </style>
   `;
 
-  // Print the resume only, without the portfolio navigation.
   printWindow.document.open();
 
   printWindow.document.write(`
@@ -284,27 +238,64 @@ function saveResumeAsPDF() {
 
   printWindow.document.close();
 
-  // Wait until the new document has loaded before printing.
-  printWindow.addEventListener(
-    "load",
-    () => {
-      setTimeout(() => {
-        printWindow.focus();
-        printWindow.print();
-      }, 250);
-    },
-    { once: true }
-  );
+  printWindow.onload = () => {
+    printWindow.focus();
+    printWindow.print();
+  };
 }
 
-// Main Download Resume button.
-downloadResume.addEventListener(
-  "click",
-  saveResumeAsPDF
-);
+printResume.addEventListener("click", saveResumeAsPDF);
 
-// Save as PDF button inside the resume preview.
-printResume.addEventListener(
-  "click",
-  saveResumeAsPDF
-);
+
+
+contactForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  formStatus.textContent = "";
+  formStatus.className = "form-status";
+
+  const formEndpoint = contactForm.action;
+
+  submitContact.disabled = true;
+  submitContact.textContent = "Sending message...";
+
+  try {
+    const response = await fetch(formEndpoint, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (response.ok) {
+      formStatus.textContent =
+        "Message submitted successfully! Please check your email or Formspree inbox for confirmation.";
+      formStatus.classList.add("success");
+
+      contactForm.reset();
+    } else {
+      const details = Array.isArray(result.errors)
+        ? result.errors.map((item) => item.message).join(" ")
+        : "";
+
+      formStatus.textContent =
+        details ||
+        `Message could not be sent (HTTP ${response.status}). Check your Formspree form settings.`;
+
+      formStatus.classList.add("error");
+      console.error("Formspree error:", result);
+    }
+  } catch (error) {
+    formStatus.textContent =
+      "Network error. Check your internet connection and try again.";
+
+    formStatus.classList.add("error");
+    console.error("Contact form error:", error);
+  } finally {
+    submitContact.disabled = false;
+    submitContact.textContent = "Send Message ↗";
+  }
+});
